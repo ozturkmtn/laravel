@@ -14,13 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/sample', function () {
-    return view('fuck');
+    return view('sample', ['name' => 'John']);
 });
+//
+//Route::get('/f/{id}', function ($id){
+//    echo $id;
+//    return view('welcome');
+//    //return redirect('/sample');
+//});
+//
+//Route::redirect('/sample2','/f/302',302);
 
-Route::get('/f/{id}', function ($id){
-    echo $id;
-    return view('welcome');
-    //return redirect('/sample');
-});
+//Route::get('main','MainController@index');
 
-Route::redirect('/sample2','/f/302',302);
+Route::view('example', 'example');
