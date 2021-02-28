@@ -3,5 +3,9 @@
 
     <h1> {{$title ?? ''}} Header Component</h1>
 
-    <h3>{{$info}}</h3>
+    <h3>{{$fname}} {{$leName}}</h3>
+
+    <p>
+        {{$robot()}}
+    </p>
 </div>

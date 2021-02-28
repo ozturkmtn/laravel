@@ -12,9 +12,18 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//use Illuminate\Support\Facades\Http;
+//$res = Http::get('https://www.tcmb.gov.tr/kurlar/today.xml');
+//dump($res->body());die;
+
+Route::view('/', 'welcome');
 
 Route::get('/sample', function () {
-    return view('sample', ['name' => 'John']);
+    return view('sample', [
+        'name' => 'Metin',
+        'lastName' => 'Ozturk',
+        'person' => ['name' => 'Merve Nur'],
+    ]);
 });
 //
 //Route::get('/f/{id}', function ($id){
@@ -25,6 +34,13 @@ Route::get('/sample', function () {
 //
 //Route::redirect('/sample2','/f/302',302);
 
-//Route::get('main','MainController@index');
+Route::get('main','MainController@index');
+Route::get('/producer','MainController@producer');
+Route::get('/consumer/{queue?}','MainController@consumer');
+Route::get('/consumer-bind/{queue?}/{exchange?}','MainController@consumerBind');
+Route::get('/consumer-unbind/{queue?}/{exchange?}','MainController@consumerUnBind');
 
 Route::view('example', 'example');
+
+Route::view('userview','user');
+Route::post('usercontroller', 'UsersController@account');

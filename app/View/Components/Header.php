@@ -13,12 +13,19 @@ class Header extends Component
      */
 
     public $title;
-    public $info;
-    public function __construct($title, $name = null)
+    public $fname;
+    public $leName;
+    public function __construct($title, $name = null, $lastName = null)
     {
         //
         $this->title = $title;
-        $this->info = $name;
+        $this->fname = $name;
+        $this->leName = $lastName;
+    }
+
+    public function robot()
+    {
+        return 'ROBOT!!!';
     }
 
     /**
